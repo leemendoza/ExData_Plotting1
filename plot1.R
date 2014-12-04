@@ -36,4 +36,13 @@ power_data = cbind(DateTime, power_data)
 power_data$Date = NULL
 power_data$Time = NULL
 
+# redirect graphic output to a file
+png("plot1.png")
 #################################### plotting code follows #################################
+
+hist(power_data$Global_active_power, main = "Global Active Power", 
+        xlab = "Global Active Power (kilowatts)", col = "red", ylim = c(0, 1200))
+
+# turn off redirection
+dev.off()
+
