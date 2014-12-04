@@ -37,3 +37,9 @@ power_data$Date = NULL
 power_data$Time = NULL
 
 #################################### plotting code follows #################################
+# redirect graphic output to a file
+png("plot2.png")
+plot(power_data$DateTime, power_data$Global_active_power, type = "n", ylab = "Global Active Power (kilowatts)", xlab = "")
+lines(power_data$DateTime, power_data$Global_active_power)
+# turn off redirection
+dev.off()
