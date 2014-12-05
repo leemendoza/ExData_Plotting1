@@ -37,5 +37,16 @@ power_data$Date = NULL
 power_data$Time = NULL
 
 #################################### plotting code follows #################################
+png("plot4.png")
+par(mfcol=c(2, 2))
+plot(power_data$DateTime, power_data$Global_active_power, type = "n", ylab = "Global Active Power", xlab = "")
+lines(power_data$DateTime, power_data$Global_active_power)
+plot(power_data$DateTime, power_data$Sub_metering_1, type = "n", ylab = "Energy sub metering", xlab = "")
+lines(power_data$DateTime, power_data$Sub_metering_1, type = "l", col="black")
+lines(power_data$DateTime, power_data$Sub_metering_2, type = "l", col="red")
+lines(power_data$DateTime, power_data$Sub_metering_3, type = "l", col="blue")
+legend('topright', names(power_data)[6:8], lty=1, bty="n", col=c("black", "red", "blue")) 
+plot(power_data$DateTime, power_data$Voltage, type = "l", xlab="datetime", ylab = "Voltage")
 
 
+dev.off()
