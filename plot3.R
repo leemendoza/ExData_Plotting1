@@ -37,3 +37,10 @@ power_data$Date = NULL
 power_data$Time = NULL
 
 #################################### plotting code follows #################################
+png("plot3.png")
+plot(power_data$DateTime, power_data$Sub_metering_1, type = "n", ylab = "Energy sub metering", xlab = "")
+lines(power_data$DateTime, power_data$Sub_metering_1, type = "l", col="black")
+lines(power_data$DateTime, power_data$Sub_metering_2, type = "l", col="red")
+lines(power_data$DateTime, power_data$Sub_metering_3, type = "l", col="blue")
+legend('topright', names(power_data)[6:8], lty=1, col=c("black", "red", "blue")) 
+dev.off()
