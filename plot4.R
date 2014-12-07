@@ -61,3 +61,4 @@ plot(power_data$DateTime, power_data$Voltage, type = "l", xlab="datetime", ylab 
 ## bottom right
 plot(power_data$DateTime, power_data$Global_reactive_power, type = "l", xlab="datetime", ylab = "Global_reactive_power")
 dev.off()
+ 
